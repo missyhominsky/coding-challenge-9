@@ -47,3 +47,33 @@ const mgr1 = new Manager("John Smith", 201, "IT", 8000, 5);
 
 console.log(mgr1.getDetails()); 
 console.log(mgr1.calculateBonus()); 
+
+//Task 3 - Created Company Class
+
+class Company { 
+    constructor(name, employees) { 
+        this.name = name;
+        this.employees = []; //Initializing empty employees array
+    };
+    
+    addEmployee(employee) { //addEmployee method setup
+        this.employees.push(employee); //.push() employee to the employees array
+    }
+
+    listEmployees() { 
+        this.employees.forEach(employee => {console.log(employee.getDetails())}); 
+    }
+
+    calculateTotalPayroll() { //Add calculateTotalPayroll() to the Company class
+        return this.employees.reduce((total, employee) => total + employee.calculateAnnualSalary(), 0); //return the sum of all employee and manager salaries 
+    }
+
+    promoteToManager (employee, teamSize) { 
+        const index = this.employees.indexOf(employee); 
+        this.employees[index] = new Manager(employee.name, employee.id, employee.department, employee.salary, teamSize); 
+    }
+}
+
+const company = new Company("TechCorp"); //Test case
+company.addEmployee(emp1); 
+company.addEmployee(mgr1); 
