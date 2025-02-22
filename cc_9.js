@@ -80,3 +80,7 @@ company.addEmployee(mgr1);
 
 //Task 4 - Implemented Payroll System
 console.log(company.calculateTotalPayroll()); 
+
+//Task 5 - Implemented Promotion System
+company.promoteToManager(emp1, 3); 
+company.listEmployees(); 
