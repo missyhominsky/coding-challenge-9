@@ -77,3 +77,6 @@ class Company {
 const company = new Company("TechCorp"); //Test case
 company.addEmployee(emp1); 
 company.addEmployee(mgr1); 
+
+//Task 4 - Implemented Payroll System
+console.log(company.calculateTotalPayroll()); 
